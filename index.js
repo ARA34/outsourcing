@@ -15,7 +15,13 @@ const db = admin.firestore();
 
 app.use(bodyParser.json());
 
+
 app.post('/save', async (req, res) => {
+
+    app.use((req, res, next) => {
+        console.log(`Incoming: ${req.method} ${req.url}`);
+        next();
+    });
   const { userId, data } = req.body;
 
   if (!userId || !data) {
@@ -31,7 +37,12 @@ app.post('/save', async (req, res) => {
   }
 });
 
+
 app.post('/load', async (req, res) => {
+    app.use((req, res, next) => {
+        console.log(`Incoming: ${req.method} ${req.url}`);
+        next();
+    });
   const { userId } = req.body;
 
   try {
