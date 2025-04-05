@@ -1,6 +1,6 @@
 const express = require('express');
 const admin = require('firebase-admin');
-const bodyParser = require('body-parser');
+// const bodyParser = require('body-parser');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -13,7 +13,7 @@ admin.initializeApp({
 
 const db = admin.firestore();
 
-app.use(bodyParser.json());
+app.use(express.json());
 
 
 app.post('/save', async (req, res) => {
