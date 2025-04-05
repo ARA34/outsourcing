@@ -5,7 +5,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Load your Firebase credentials
-const serviceAccount = require('away-from-the-sun-firebase-adminsdk-fbsvc-253126e6a5.json');
+const serviceAccount = require('./away-from-the-sun-firebase-adminsdk-fbsvc-253126e6a5.json');
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
